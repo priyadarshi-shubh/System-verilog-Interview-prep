@@ -1,0 +1,22 @@
+//Associative array example///
+//create an associative array and assign some value print it
+module assoc_array_example();
+  
+  typedef int addr_t;
+  typedef logic[31:0] data_t;
+  int i;
+  initial begin
+  addr_t data_map[int]; // Associative array
+
+  for(i=0;i<10;i++)begin
+    data_map[i*2]=i;
+    $display("data_map for idx %0d is %0d",i*2,data_map[i*2]);
+  end
+    
+  foreach(data_map[i])
+    $display("data_map observed for idx %0d is %0d ", i, data_map[i]);
+  //task automatic print_data(input addr_t addr);
+    // Your code here
+  //endtask
+    end
+endmodule
